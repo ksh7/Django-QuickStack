@@ -1,0 +1,126 @@
+version: '3'
+
+services:
+    nginx:
+        restart: always
+        image: nginx:1.23-alpine
+        ports:
+            - 80:80
+        volumes:
+            - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+            - static_volume:/app/backend/staticfiles
+    server:
+        restart: unless-stopped
+        build:
+            context: .
+            dockerfile: ./docker/backend/Dockerfile
+        entrypoint: /app/docker/backend/server-entrypoint.sh
+        volumes:
+            - static_volume:/app/backend/staticfiles
+        expose:
+            - 8000     
+        environment:
+            DEBUG: "True"
+            CELERY_BROKER_URL: "redis://redis:6379/0"
+            CELERY_RESULT_BACKEND: "redis://redis:6379/0"
+            DJANGO_DB: postgresql
+            POSTGRES_HOST: db
+            POSTGRES_NAME: postgres
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: postgres
+            POSTGRES_PORT: 5432
+    frontend:
+        restart: unless-stopped
+        build:
+            context: .
+            dockerfile: ./docker/frontend/Dockerfile
+        entrypoint: /app/docker/frontend/react-entrypoint.sh
+        volumes:
+            - frontend_data:/app/build
+        expose:
+            - 3005
+        ports:
+            - "3005:3005"
+        stdin_open: true
+    worker:
+        restart: unless-stopped
+        build:
+            context: .
+            dockerfile: ./docker/backend/Dockerfile
+        entrypoint: /app/docker/backend/worker-entrypoint.sh
+        volumes:
+            - static_volume:/app/backend/staticfiles
+        environment:
+            DEBUG: "True"
+            CELERY_BROKER_URL: "redis://redis:6379/0"
+            CELERY_RESULT_BACKEND: "redis://redis:6379/0"
+            DJANGO_DB: postgresql
+            POSTGRES_HOST: db
+            POSTGRES_NAME: postgres
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: postgres
+            POSTGRES_PORT: 5432
+        depends_on:
+            - server
+            - redis
+    flower:
+        restart: unless-stopped
+        build:
+            context: .
+            dockerfile: ./docker/backend/Dockerfile
+        entrypoint: /app/docker/backend/flower-entrypoint.sh
+        volumes:
+            - static_volume:/app/backend/staticfiles
+        environment:
+            DEBUG: "True"
+            CELERY_BROKER_URL: "redis://redis:6379/0"
+            CELERY_RESULT_BACKEND: "redis://redis:6379/0"
+            FLOWER_PORT: 5555
+        depends_on:
+            - redis
+            - worker
+        ports:
+            - 5555:5555
+    redis:
+        restart: unless-stopped
+        image: redis:7.0.5-alpine 
+        expose:
+            - 6379
+    db:
+        image: postgres:13.0-alpine
+        restart: unless-stopped
+        volumes:
+            - postgres_data:/var/lib/postgresql/data/
+        environment:
+            POSTGRES_DB: postgres
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: postgres
+        expose:
+            - 5432
+    elasticsearch:
+        image: launcher.gcr.io/google/elasticsearch2
+        ports:
+            - "9200:9200"
+            - "9300:9300"
+    prometheus:
+        image: prom/prometheus
+        volumes:
+            - ./docker/prometheus/:/etc/prometheus/
+        ports:
+            - "9090:9090"
+    grafana:
+        image: grafana/grafana
+        ports:
+            - "3000:3000"
+        volumes:
+            - graf_data:/var/lib/grafana
+        environment:
+            - GF_USERS_ALLOW_SIGN_UP=false
+            - GF_DASHBOARDS_JSON_ENABLED=true
+    
+
+volumes:
+    static_volume: {}
+    frontend_data: {}
+    postgres_data: {}
+    graf_data: {}

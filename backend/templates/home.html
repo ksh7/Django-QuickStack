@@ -1,0 +1,272 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="px-4 py-3 my-5 text-center" id="apps">
+  <h1 class="display-5 fw-bold">Django QuickStack</h1>
+  <div class="col-lg-8 mx-auto">
+    <p class="lead mb-4">Powerful stack built on top of Django powered by Docker to quickly prototype, develop and ship producation grade applications.</p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      <a href="#services" class="btn btn-primary btn-lg px-4 gap-3">Explore</a>
+      <a href="https://github.com/ksh7/Django-QuickStack" target="_blank" class="btn btn-outline-secondary btn-lg px-4">Github</a>
+    </div>
+  </div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-5 mb-3 text-center">
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h4 class="my-0 fw-normal">Blog App</h4>
+      </div>
+      <div class="card-body">
+        <a href="/blog" class="w-100 btn btn-sm btn-outline-primary">Visit Blog</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h4 class="my-0 fw-normal">Forum App</h4>
+      </div>
+      <div class="card-body">
+        <a href="/forum" class="w-100 btn btn-sm btn-outline-primary">Visit Forum</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h4 class="my-0 fw-normal">Helpdesk App</h4>
+      </div>
+      <div class="card-body">
+        <a href="/helpdesk" class="w-100 btn btn-sm btn-outline-primary">Visit Helpdesk</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h4 class="my-0 fw-normal">E-Commerce App</h4>
+      </div>
+      <div class="card-body">
+        <a href="/shop" class="w-100 btn btn-sm btn-outline-primary">Visit E-Commerce</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h4 class="my-0 fw-normal">Polls App</h4>
+      </div>
+      <div class="card-body">
+        <a href="/polls" class="w-100 btn btn-sm btn-outline-primary">Visit Polls</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h4 class="my-0 fw-normal">Workflows App</h4>
+      </div>
+      <div class="card-body">
+        <a href="/workflows" class="w-100 btn btn-sm btn-outline-primary">Visit Workflows</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h4 class="my-0 fw-normal">Async Tasks App</h4>
+      </div>
+      <div class="card-body">
+        <a href="/async_tasks" class="w-100 btn btn-sm btn-outline-primary">Visit Tasks</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h4 class="my-0 fw-normal">REST APIs App</h4>
+      </div>
+      <div class="card-body">
+        <a href="/rest_api" class="w-100 btn btn-sm btn-outline-primary">Visit REST APIs</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h4 class="my-0 fw-normal">Auth App</h4>
+      </div>
+      <div class="card-body">
+        <a href="/" class="w-100 btn btn-sm btn-outline-primary">Visit Auth</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h4 class="my-0 fw-normal">ReactJS App</h4>
+      </div>
+      <div class="card-body">
+        <a href="https://frontend-djangoquickstack.bunnyenv.com" target="_blank" class="w-100 btn btn-sm btn-outline-primary">Visit ReactJS</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="album py-5 bg-light" id="services">
+  <div class="container">
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{% static 'img/django.png' %}" height="125">
+          <div class="card-body">
+            <p class="card-text">Django is a free and open-source, Python-based web framework that follows the model, template, views architectural pattern.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a href="#" class="btn btn-sm btn-outline-secondary">Know More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{% static 'img/postgres.png' %}" height="125">
+          <div class="card-body">
+            <p class="card-text">PostgreSQL, is a free and open-source relational database management system emphasizing extensibility and ...</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a href="#" class="btn btn-sm btn-outline-secondary">Know More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{% static 'img/celery.png' %}" height="125">
+          <div class="card-body">
+            <p class="card-text">Celery is an open source asynchronous task queue or job queue which is based on distributed message passing. While it ...</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a href="#" class="btn btn-sm btn-outline-secondary">Know More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{% static 'img/celery-flower.png' %}" height="125">
+          <div class="card-body">
+            <p class="card-text">Flower is an open-source web application for monitoring and managing Celery clusters. It provides real-time ...</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a href="#" class="btn btn-sm btn-outline-secondary">Know More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{% static 'img/redis.png' %}" height="125">
+          <div class="card-body">
+            <p class="card-text">Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message...</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a href="#" class="btn btn-sm btn-outline-secondary">Know More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{% static 'img/elasticsearch.png' %}" height="125">
+          <div class="card-body">
+            <p class="card-text">Elasticsearch is a distributed, RESTful search and analytics engine capable of addressing ...</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a href="#" class="btn btn-sm btn-outline-secondary">Know More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{% static 'img/joeflow.png' %}" height="125">
+          <div class="card-body">
+            <p class="card-text">Joeflow is a free workflow automation framework to bring simplicity to complex workflows ...</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a href="#" class="btn btn-sm btn-outline-secondary">Know More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{% static 'img/prometheus.png' %}" height="125">
+          <div class="card-body">
+            <p class="card-text">Prometheus is a free software application used for event monitoring and alerting ...</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a href="#" class="btn btn-sm btn-outline-secondary">Know More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{% static 'img/grafana.png' %}" height="125">
+          <div class="card-body">
+            <p class="card-text">Grafana is a multi-platform open source analytics and interactive visualization web app...</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a href="#" class="btn btn-sm btn-outline-secondary">Know More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{% static 'img/docker.png' %}" height="125">
+          <div class="card-body">
+            <p class="card-text">Docker is a set of platform as a service products that use OS-level virtualization to deliver ...</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a href="#" class="btn btn-sm btn-outline-secondary">Know More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+{% endblock content %}

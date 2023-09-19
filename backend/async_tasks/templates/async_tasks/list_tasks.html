@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+
+<div class="album py-5 bg-light">
+    <div class="container">
+      <h2 class="mb-3">Your Celery Tasks</h2>
+      <p class="mb-5">These tasks call external APIs that takes several seconds to respond, so Celery processes them in background and results are shown here.</p>
+      <div class="row center">
+        <div class="col-md-6 offset-md-3">
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card mb-4 box-shadow">
+            <div class="card-body">
+              <h4>Calculate Carbon Footprint</h4>
+              <p class="card-text"></p>
+              <div class="">
+                  <a href="/async_tasks/website_carbon_footprint" class="btn btn-sm btn-outline-primary">Start Task</a>
+                  <a href="https://flower-djangoquickstack.bunnyenv.com" target="_blank" class="btn btn-sm btn-outline-secondary">Track in Celery/Flower</a>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-4 box-shadow">
+            <div class="card-body">
+              <h4>List of Website Footprint Calculated</h4>
+              <table class="table">
+                  <thead>
+                      <tr>
+                          <th scope="col">URL</th>
+                          <th scope="col">Is Green?</th>
+                          <th scope="col">CO2 Used / Page Load</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for w in websitefootprint %}
+                        <tr>
+                            <td>{{w.url}}</td>
+                            <td>{{w.is_green}}</td>
+                            <td>{{w.co2_transferred_on_page_load}} gms</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card mb-4 box-shadow">
+              <div class="card-body">
+                <h4>Get Random Coffee</h4>
+                <p class="card-text"></p>
+                <div class="">
+                    <a href="/async_tasks/get_coffee_picture" class="btn btn-sm btn-outline-primary">Start Task</a>
+                    <a href="https://flower-djangoquickstack.bunnyenv.com" target="_blank" class="btn btn-sm btn-outline-secondary">Track in Celery/Flower</a>
+                </div>
+              </div>
+            </div>
+            <div class="card mb-4 box-shadow">
+              <div class="card-body">
+                <h4>List of Coffee Pictures</h4>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Photo</th>
+                            <th scope="col">When</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                      {% for c in coffeepicture %}
+                          <tr>
+                              <td><img src="{{c.url}}" width="50" height="50" /></td>
+                              <td>{{c.timestamp}}</td>
+                          </tr>
+                      {% endfor %}
+                      </tbody>
+                  </table>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

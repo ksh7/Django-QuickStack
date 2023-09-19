@@ -1,0 +1,209 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="px-4 py-3 my-5 text-center">
+  <h1 class="display-5 fw-bold">Django Ready-To-Use Apps</h1>
+  <div class="col-lg-8 mx-auto">
+    <p class="lead mb-4">Powerful stack built on top of Django powered by Docker as a Service to quickly prototype, develop and ship producation grade applications.</p>
+  </div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h5 class="my-0 fw-normal">Blog App</h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text">A fully featured blog powered by Django's Putput & Wagtail. It can be further customized and extended.</p>
+        <a href="/blog" target="_blank" class="card-link">View Blog</a>
+        <a href="/blog/blog_admin" target="_blank" class="card-link">Blog Admin</a>
+        <a href="https://github.com/ksh7/Django-QuickStack/tree/main/backend/blog_app" target="_blank" class="card-link">Code</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h5 class="my-0 fw-normal">Forum App</h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text">A fully featured community forum powered by Django's Machina. It can be further customized and extended.</p>
+        <a href="/forum" target="_blank" class="card-link">View Forum</a>
+        <a href="/admin/forum/forum/" target="_blank" class="card-link">Forum Admin</a>
+        <a href="https://github.com/ksh7/Django-QuickStack/tree/main/backend/forum_app" target="_blank" class="card-link">Code</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h5 class="my-0 fw-normal">Helpdesk App</h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text">A fully featured ticketing & helpdesk app powered by Django. It can be further customized and extended.</p>
+        <a href="/helpdesk" target="_blank" class="card-link">View Helpdesk</a>
+        <a href="/admin/helpdesk/" target="_blank" class="card-link">Helpdesk Admin</a>
+        <a href="https://github.com/ksh7/Django-QuickStack/tree/main/backend/helpdesk_app" target="_blank" class="card-link">Code</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h5 class="my-0 fw-normal">Polls App</h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text">A fully featured polling & quiz app powered by Django. It can be further customized and extended.</p>
+        <a href="/polls" target="_blank" class="card-link">View Polls</a>
+        <a href="/admin/polls/" target="_blank" class="card-link">Polls Admin</a>
+        <a href="https://github.com/ksh7/Django-QuickStack/tree/main/backend/polls" target="_blank" class="card-link">Code</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h5 class="my-0 fw-normal">E-Commerce App</h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text">A simple products and shopping app powered by Django. It can be further customized and extended.</p>
+        <a href="/shop" target="_blank" class="card-link">View Shop</a>
+        <a href="/admin/ecommerce/" target="_blank" class="card-link">Shop Admin</a>
+        <a href="https://github.com/ksh7/Django-QuickStack/tree/main/backend/ecommerce" target="_blank" class="card-link">Code</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h5 class="my-0 fw-normal">REST APIs App</h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text">A fully featured REST API powered using Django REST Framework. It can be further customized and extended.</p>
+        <a href="/rest_api" target="_blank" class="card-link">View REST APIs</a>
+        <a href="/admin/rest_api/" target="_blank" class="card-link">REST APIs Admin</a>
+        <a href="https://github.com/ksh7/Django-QuickStack/tree/main/backend/rest_api" target="_blank" class="card-link">Code</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h5 class="my-0 fw-normal">Workflows App</h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text">A fully featured state machine workflows app powered using JoeFlow. It can be further customized and extended.</p>
+        <a href="/workflows" target="_blank" class="card-link">View Workflows</a>
+        <a href="/admin/state_machine_workflows/" target="_blank" class="card-link">Workflows Admin</a>
+        <a href="https://github.com/ksh7/Django-QuickStack/tree/main/backend/state_machine_workflows" target="_blank" class="card-link">Code</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h5 class="my-0 fw-normal">Async Tasks App</h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text">A fully featured asynchronous task manager app powered using Celery & Redis. It can be further customized and extended.</p>
+        <a href="/async_tasks" target="_blank" class="card-link">View Tasks</a>
+        <a href="/admin/async_tasks/" target="_blank" class="card-link">Tasks Admin</a>
+        <a href="https://github.com/ksh7/Django-QuickStack/tree/main/backend/async_tasks" target="_blank" class="card-link">Code</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h5 class="my-0 fw-normal">Accounts/Auth App</h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text">A fully function user management app inlcuding login, registration. It can be further customized and extended.</p>
+        <a href="/admin/account/" target="_blank" class="card-link">View Auth</a>
+        <a href="/admin/account/" target="_blank" class="card-link">Auth Admin</a>
+        <a href="https://github.com/ksh7/Django-QuickStack/tree/main/backend/accounts" target="_blank" class="card-link">Code</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="px-4 py-3 my-5 text-center">
+  <h1 class="display-5 fw-bold">Monitoring Services</h1>
+  <div class="col-lg-8 mx-auto">
+    <p class="lead mb-4">Powerful stack built on top of Django powered by Docker as a Service to quickly prototype, develop and ship producation grade applications.</p>
+  </div>
+</div>
+
+<p lead mb-4><strong>Note:</strong> To access these monitoring apps visit their respective ports like localhost:5555 for Celery/Flower. View at <a href="https://github.com/ksh7/Django-QuickStack/blob/main/docker-compose.yml" target="_blank" class="card-link">Docker Config</a>.</p>
+<div class="row row-cols-1 row-cols-md-4 mb-3 text-center">
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h5 class="my-0 fw-normal">Celery/Flower</h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text">For monitoring background tasks by Celery.</p>
+        <a href="https://flower-djangoquickstack.bunnyenv.com" target="_blank" class="card-link">View Service</a>
+        <a href="https://github.com/ksh7/Django-QuickStack/blob/main/docker-compose.yml" target="_blank" class="card-link">Docker Config</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h5 class="my-0 fw-normal">ElasticSearch</h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text">For integrating search functionality into Django.</p>
+        <a href="https://elasticsearch-djangoquickstack.bunnyenv.com" target="_blank" class="card-link">View Service</a>
+        <a href="https://github.com/ksh7/Django-QuickStack/blob/main/docker-compose.yml" target="_blank" class="card-link">Docker Config</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h5 class="my-0 fw-normal">Prometheus</h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text">For monitoring Django and logging events.</p>
+        <a href="https://prometheus-djangoquickstack.bunnyenv.com" target="_blank" class="card-link">View Service</a>
+        <a href="https://github.com/ksh7/Django-QuickStack/blob/main/docker-compose.yml" target="_blank" class="card-link">Docker Config</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h5 class="my-0 fw-normal">Grafana</h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text">For creating visualization and graphs based on Prometheus logs</p>
+        <a href="https://grafana-djangoquickstack.bunnyenv.com" target="_blank" class="card-link">View Service</a>
+        <a href="https://github.com/ksh7/Django-QuickStack/blob/main/docker-compose.yml" target="_blank" class="card-link">Docker Config</a>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+</div>
+
+
+{% endblock content %}

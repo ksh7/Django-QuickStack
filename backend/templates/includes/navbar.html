@@ -1,0 +1,31 @@
+{% load static %}
+<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+      <span class="fs-4">Django QuickStack</span>
+    </a>
+
+    {% if request.user.is_authenticated %}
+        <ul class="nav nav-pills">
+            <li class="nav-item"><a href="{% url 'dashboard' %}" class="nav-link">Dashboard</a></li>
+            <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Explore Services</a></li>
+            <div class="dropdown text-end">
+                <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="{% static 'img/user.jpg' %}" alt="mdo" width="32" height="32" class="rounded-circle">
+                </a>
+                <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 34px);" data-popper-placement="bottom-start">
+                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="{% url 'accounts:logout' %}">Sign out</a></li>
+                </ul>
+              </div>
+        </ul>
+    {% else %}
+        <ul class="nav nav-pills">
+            <li class="nav-item"><a href="/#services" class="nav-link">Services</a></li>
+            <li class="nav-item"><a href="/#apps" class="nav-link">Apps</a></li>
+            <li class="nav-item"><a href="https://github.com/ksh7/Django-QuickStack" target="_blank" class="nav-link">Github</a></li>
+            <li class="nav-item"><a href="#" target="_blank" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="{% url 'accounts:login' %}" class="nav-link active" aria-current="page">Login</a></li>
+        </ul>
+    {% endif %}
+  </header>
